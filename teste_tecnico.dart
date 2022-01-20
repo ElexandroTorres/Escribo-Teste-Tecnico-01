@@ -31,16 +31,17 @@ void main(List<String> arguments) {
       } else {
         print('Falhou');
       }
+      return;
     }
-  } else {
-    print("Digite um numero inteiro positivo:");
+  }
+  print("Digite um numero inteiro positivo:");
 
-    try {
-      numero = int.parse(stdin.readLineSync()!);
-      resultado = somatorioDivisiveis(numero);
-      print('$resultado');
-    } catch (e) {
-      print('Valor invalido, insira um numero!');
-    }
+  try {
+    numero = int.parse(stdin.readLineSync()!);
+    resultado = somatorioDivisiveis(numero);
+    print(
+        'Somatorio dos divisiveis de 3 ou 5 menores que ${numero}: ${resultado}');
+  } catch (e) {
+    print('Valor invalido, insira um numero!');
   }
 }
